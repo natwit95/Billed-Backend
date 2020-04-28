@@ -1,4 +1,4 @@
 class BillContributorSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :contributed_amount, :paid
+  attributes  :user_id, :contributed_amount, :paid,:bill_id
   
 end

@@ -10,12 +10,12 @@ class BillContributorsController < ApplicationController
     end
 
     def create
-        bill_contributor = BillContributor.create(user_params)
+        bill_contributor = BillContributor.create(bill_contributor_params)
         render json: bill_contributor
     end
     private
 
-    def user_params
+    def bill_contributor_params
         params.require(:bill_contributor).permit(:user_id, :bill_id, :contributed_amount, :paid)
     end
 
