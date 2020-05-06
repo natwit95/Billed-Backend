@@ -12,5 +12,5 @@ class User < ApplicationRecord
   has_many :followings, through: :given_follows, source: :followed_user
 
   has_many :bills
-  has_many :bill_contributors, through: :bills
+  has_many :bill_contributors
 end
