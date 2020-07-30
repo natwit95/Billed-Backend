@@ -12,8 +12,15 @@ class FollowsController < ApplicationController
     def create
         follow = Follow.create(follow_params)
         render json: follow
+        
     end
-    
+
+      def destroy 
+        follow = Follow.find(params[:id])
+        follow.destroy 
+        follow = Follow.all 
+        render json: {status: 'deleted'} 
+    end
     private
 
     def follow_params
